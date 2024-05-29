@@ -65,8 +65,18 @@ class app{
 
     init() {
       var body=document.body;
+      body.addEventListener("touchstart",(e)=>{
+        e.preventDefault();
+        this.currentState.onClick();
+      });
+      body.addEventListener("click", (e)=>{
+        e.preventDefault();
+        this.currentState.onClick();
+      }, true);
       body.addEventListener("keydown", (e)=>{
       if(e.keyCode==32) this.currentState.onClick();});
+
+      // document.body.addEventListener('click', this.currentState.onClick());
     }
 
     setState(stateName) {
