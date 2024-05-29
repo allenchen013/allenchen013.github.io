@@ -2,8 +2,7 @@
     color: #fff;    
     display: flex;
     flex-direction: row;
-    margin: auto;
-    padding: 50px;
+    padding: 10px;
     justify-content: space-around;
     align-items: center; 
 }
