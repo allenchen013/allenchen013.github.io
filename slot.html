@@ -1,0 +1,146 @@
+<style>
+    .results {
+      width: 60px;
+      color: #fff;
+    }
+    .result {
+      height: 70px;
+      width: 200px;
+      border-radius: 4px;
+      border: 2px solid gray;
+      overflow: hidden;
+      margin: 0 10
+    }    
+    .result-txt {
+      background: linear-gradient(LightCoral, Gold, LightSkyBlue, LightCoral);
+    }
+    .result-item {
+      font-size: 48px;
+      display: flex;
+      justify-content: center;
+      line-height: 70px;
+    }
+    .btn-start, .btn-stop {
+        width: 200;
+      text-align: center;
+      font-size: 50px;
+      margin: 20px 10px;
+      line-height: 70px;
+      border-radius: 2px;
+      background: linear-gradient(DarkGray, DimGray);
+      cursor: pointer;
+    }
+    .btn-start:hover,
+    .btn-stop:hover {
+      transform: scale(1.05);
+    }
+
+    .is-play.result-txt {
+        animation: resultPlay 1s infinite linear;
+    }
+
+
+    @keyframes resultPlay {
+        100% {
+        transform: translateY(-80%)
+        }
+    }
+
+    .flex{
+        display: inline-flex;
+    }
+  </style>
+<!-- HTML -->
+
+<div class="results">    
+    <div class="flex">
+        <div class="btn-start" onclick="startAnimation()">Start</div>
+        <div class="btn-stop" onclick="stopAnimation()">Stop</div>
+    </div>
+    
+    <div class="flex">
+        <div class="result">
+            <div class="result-txt is-play" id="result_A">
+                <div class="result-item">從左數</div>
+                <div class="result-item">從右數</div>
+                <div class="result-item">從左數</div>
+                <div class="result-item">從右數</div>
+                <div class="result-item">從左數</div>
+                <div class="result-item">從右數</div>
+                <div class="result-item">從左數</div>
+                <div class="result-item">從右數</div>
+                <div class="result-item">從左數</div>
+                <div class="result-item">從右數</div>
+            </div>
+        </div>
+
+        <div class="result">
+            <div class="result-txt is-play" id="result_B">
+                <div class="result-item">第4排</div>
+                <div class="result-item">第5排</div>
+                <div class="result-item">第6排</div>
+                <div class="result-item">第7排</div>
+                <div class="result-item">第8排</div>
+                <div class="result-item">第9排</div>
+                <div class="result-item">第10排</div>
+                <div class="result-item">第11排</div>
+                <div class="result-item">第12排</div>
+                <div class="result-item">第13排</div>
+            </div>
+        </div>
+
+        <div class="result">
+            <div class="result-txt is-play" id="result_C">
+                <div class="result-item">第1位</div>
+                <div class="result-item">第2位</div>
+                <div class="result-item">第3位</div>
+                <div class="result-item">第4位</div>
+                <div class="result-item">第5位</div>
+                <div class="result-item">第6位</div>
+                <div class="result-item">第7位</div>
+                <div class="result-item">第8位</div>
+            </div>
+        </div>
+    </div>
+    
+
+</div> 
+
+<!-- Script -->
+  <script>
+    function startAnimation() {
+      if (document.getElementById(`result_A`)) {
+        document.getElementById(`result_A`).classList.add('is-play');
+        document.getElementById(`result_A`).style.transform = 'none';
+      }
+      if (document.getElementById(`result_B`)) {
+        document.getElementById(`result_B`).classList.add('is-play');
+        document.getElementById(`result_B`).style.transform = 'none';
+      }
+      if (document.getElementById(`result_C`)) {
+        document.getElementById(`result_C`).classList.add('is-play');
+        document.getElementById(`result_C`).style.transform = 'none';
+      }
+    }
+
+    function stopAnimation() {
+
+    if (document.getElementById(`result_A`)) {
+      const num = Math.floor(Math.random() * 2);
+      document.getElementById(`result_A`).classList.remove('is-play');
+      document.getElementById(`result_A`).style.transform = `translateY(${-num/10 * 100}%)`;
+    }
+    if (document.getElementById(`result_B`)) {
+      const num = Math.floor(Math.random() * 10);
+      document.getElementById(`result_B`).classList.remove('is-play');
+      document.getElementById(`result_B`).style.transform = `translateY(${-num/10 * 100}%)`;
+    }
+    if (document.getElementById(`result_C`)) {
+      const num = Math.floor(Math.random() * 8);
+      document.getElementById(`result_C`).classList.remove('is-play');
+      document.getElementById(`result_C`).style.transform = `translateY(${-num/8 * 100}%)`;
+    } 
+    
+  }
+  </script>
+  
