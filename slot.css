@@ -23,8 +23,14 @@ html, body{
 }
 
 .result-txt {
-    background: linear-gradient(LightCoral, Gold, LightSkyBlue, LightCoral);   
+    background: linear-gradient(LightCoral, Gold, LightSkyBlue, Gold, LightCoral);
+    /* background: linear-gradient(black, gray, black); */
+    transition: 5s ease;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    transform:translateY(0%);
 }
+
 .result-item {
     font-size: 48px;
     display: flex;
@@ -47,21 +53,25 @@ html, body{
 }
 
 .is-play.result-txt {
-    animation: resultPlay 1s infinite linear;
+    /* animation: resultPlay 1s infinite linear; */
+    animation: resultPlay 1s infinite linear ;
 }
 
-.is-play5.result-txt {
-    animation: resultPlay 5s infinite linear;
+.is-play3.result-txt {
+    animation: resultPlay 3s infinite ease-out;
 }
 
 .is-play7.result-txt {
-    animation: resultPlay 7s infinite linear;
+    animation: resultPlay 7s infinite ;
 }
 
 
 @keyframes resultPlay {
+    0%{
+        transform: none
+    }
     100% {
-    transform: translateY(-90%)
+        transform: translateY(-90%)
     }
 }
 

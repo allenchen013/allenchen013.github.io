@@ -1,62 +1,75 @@
 async function startAnimation() {
     if (document.getElementById(`result_A`)) {
-      document.getElementById(`result_A`).classList.add('is-play');
-      document.getElementById(`result_A`).style.transform = 'none';
+      const el=document.getElementById(`result_A`);
+      el.style.transform = 'translateY(0%)';    
+      el.classList.toggle("is-play");
     }
     if (document.getElementById(`result_B`)) {
-      document.getElementById(`result_B`).classList.add('is-play');
-      document.getElementById(`result_B`).style.transform = 'none';
+      const el=document.getElementById(`result_B`);
+      el.style.transform = 'translateY(0%)';  
+      el.classList.toggle('is-play');
     }
     if (document.getElementById(`result_C`)) {
-      document.getElementById(`result_C`).classList.add('is-play');
-      document.getElementById(`result_C`).style.transform = 'none';
+      const el=document.getElementById(`result_C`);
+      el.style.transform = 'translateY(0%)';   
+      el.classList.toggle('is-play');
     }
 }
 
 async function stopAnimation() {
 
 if (document.getElementById(`result_A`)) {
-    const num1 = Math.floor(Math.random() * 2);
-    await delay(1);
-    document.getElementById(`result_A`).classList.remove('is-play');
-    document.getElementById(`result_A`).classList.add('is-play5');
-    await delay(1);
-    document.getElementById(`result_A`).classList.remove('is-play5');
-    document.getElementById(`result_A`).style.transform = `translateY(${-num1/10 * 100}%)`;
+    const ela=document.getElementById(`result_A`);
+    const elb=document.getElementById(`result_B`);
+    const elc=document.getElementById(`result_C`);
 
-    await delay(1)
+    const num1 = Math.floor(Math.random() * 10);
     const num2 = Math.floor(Math.random() * 10);
-    document.getElementById(`result_B`).classList.remove('is-play');
-    document.getElementById(`result_B`).classList.add('is-play5');
-    await delay(1)
-    document.getElementById(`result_B`).classList.remove('is-play5');
-    document.getElementById(`result_B`).style.transform = `translateY(${-num2/10 * 100}%)`;
-
-    await delay(1)
     const num3 = Math.floor(Math.random() * 8);
-    document.getElementById(`result_C`).classList.remove('is-play');
-    document.getElementById(`result_C`).classList.add('is-play5');
-    await delay(1)
-    document.getElementById(`result_C`).classList.remove('is-play5');
-    document.getElementById(`result_C`).style.transform = `translateY(${-num3/8 * 100}%)`;
+
+    await delay(1000); 
+    ela.classList.toggle("is-play");
+    ela.classList.add('is-play3');
+    await delay(2000);
+    ela.classList.remove('is-play3');
+    await delay(100);
+    ela.style.transform = `translateY(-50%)`;
+    await delay(10);
+    ela.style.transform = `translateY(-75%)`;
+    await delay(10);
+    ela.style.transform = `translateY(0%)`;
+    await delay(10);
+    ela.style.transform = `translateY(${-num1/10 * 100}%)`;
+
+    elb.classList.toggle('is-play');
+    elb.classList.add('is-play3');
+    await delay(2000);
+    elb.classList.remove('is-play3');
+    await delay(100);    
+    elb.style.transform = `translateY(-50%)`;
+    await delay(10);
+    elb.style.transform = `translateY(-75%)`;
+    await delay(10);
+    elb.style.transform = `translateY(0%)`;
+    await delay(10);
+    elb.style.transform = `translateY(${-num2/10 * 100}%)`;
+
+    elc.classList.toggle('is-play');
+    elc.classList.add('is-play3');
+    await delay(2000);
+    elc.classList.remove('is-play3');
+    await delay(100);    
+    elc.style.transform = `translateY(-50%)`;
+    await delay(10);
+    elc.style.transform = `translateY(-75%)`;
+    await delay(10);
+    elc.style.transform = `translateY(0%)`;
+    await delay(10);
+    elc.style.transform = `translateY(${-num3/8 * 100}%)`;
 
 }
-// if (document.getElementById(`result_B`)) {
-//     const num = Math.floor(Math.random() * 10);
-//     document.getElementById(`result_B`).classList.remove('is-play');
-//     document.getElementById(`result_B`).style.transform = `translateY(${-num/10 * 100}%)`;
-// }
-// if (document.getElementById(`result_C`)) {
-//     const num = Math.floor(Math.random() * 8);
-//     document.getElementById(`result_C`).classList.remove('is-play');
-//     document.getElementById(`result_C`).style.transform = `translateY(${-num/8 * 100}%)`;
-// } 
 
 }
-  var body=document.body;
-  
-  // body.addEventListener("keydown", (e)=>{
-  //   if(e.keyCode==32) stopAnimation();});
 
 class app{
     state0 = new State0(this)
@@ -75,8 +88,6 @@ class app{
       });
       body.addEventListener("keydown", (e)=>{
       if(e.keyCode==32) this.currentState.onClick();});
-
-      // document.body.addEventListener('click', this.currentState.onClick());
     }
 
     setState(stateName) {
@@ -120,6 +131,6 @@ new app().init()
 
 function delay(n) {
   return new Promise(function(resolve) {
-    setTimeout(resolve, n * 1000);
+    setTimeout(resolve, n * 1);
   });
 }
