@@ -1,35 +1,56 @@
-function startAnimation() {
+async function startAnimation() {
     if (document.getElementById(`result_A`)) {
-    document.getElementById(`result_A`).classList.add('is-play');
-    document.getElementById(`result_A`).style.transform = 'none';
+      document.getElementById(`result_A`).classList.add('is-play');
+      document.getElementById(`result_A`).style.transform = 'none';
     }
     if (document.getElementById(`result_B`)) {
-    document.getElementById(`result_B`).classList.add('is-play');
-    document.getElementById(`result_B`).style.transform = 'none';
+      document.getElementById(`result_B`).classList.add('is-play');
+      document.getElementById(`result_B`).style.transform = 'none';
     }
     if (document.getElementById(`result_C`)) {
-    document.getElementById(`result_C`).classList.add('is-play');
-    document.getElementById(`result_C`).style.transform = 'none';
+      document.getElementById(`result_C`).classList.add('is-play');
+      document.getElementById(`result_C`).style.transform = 'none';
     }
 }
 
-function stopAnimation() {
+async function stopAnimation() {
 
 if (document.getElementById(`result_A`)) {
-    const num = Math.floor(Math.random() * 2);
+    const num1 = Math.floor(Math.random() * 2);
+    await delay(1);
     document.getElementById(`result_A`).classList.remove('is-play');
-    document.getElementById(`result_A`).style.transform = `translateY(${-num/10 * 100}%)`;
-}
-if (document.getElementById(`result_B`)) {
-    const num = Math.floor(Math.random() * 10);
+    document.getElementById(`result_A`).classList.add('is-play5');
+    await delay(1);
+    document.getElementById(`result_A`).classList.remove('is-play5');
+    document.getElementById(`result_A`).style.transform = `translateY(${-num1/10 * 100}%)`;
+
+    await delay(1)
+    const num2 = Math.floor(Math.random() * 10);
     document.getElementById(`result_B`).classList.remove('is-play');
-    document.getElementById(`result_B`).style.transform = `translateY(${-num/10 * 100}%)`;
-}
-if (document.getElementById(`result_C`)) {
-    const num = Math.floor(Math.random() * 8);
+    document.getElementById(`result_B`).classList.add('is-play5');
+    await delay(1)
+    document.getElementById(`result_B`).classList.remove('is-play5');
+    document.getElementById(`result_B`).style.transform = `translateY(${-num2/10 * 100}%)`;
+
+    await delay(1)
+    const num3 = Math.floor(Math.random() * 8);
     document.getElementById(`result_C`).classList.remove('is-play');
-    document.getElementById(`result_C`).style.transform = `translateY(${-num/8 * 100}%)`;
-} 
+    document.getElementById(`result_C`).classList.add('is-play5');
+    await delay(1)
+    document.getElementById(`result_C`).classList.remove('is-play5');
+    document.getElementById(`result_C`).style.transform = `translateY(${-num3/8 * 100}%)`;
+
+}
+// if (document.getElementById(`result_B`)) {
+//     const num = Math.floor(Math.random() * 10);
+//     document.getElementById(`result_B`).classList.remove('is-play');
+//     document.getElementById(`result_B`).style.transform = `translateY(${-num/10 * 100}%)`;
+// }
+// if (document.getElementById(`result_C`)) {
+//     const num = Math.floor(Math.random() * 8);
+//     document.getElementById(`result_C`).classList.remove('is-play');
+//     document.getElementById(`result_C`).style.transform = `translateY(${-num/8 * 100}%)`;
+// } 
 
 }
   var body=document.body;
@@ -83,5 +104,12 @@ class State1 extends State {
     this.next();
   }
 }
-  
+
 new app().init()
+
+
+function delay(n) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, n * 1000);
+  });
+}

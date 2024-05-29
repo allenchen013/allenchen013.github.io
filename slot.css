@@ -44,6 +44,14 @@
     animation: resultPlay 1s infinite linear;
 }
 
+.is-play5.result-txt {
+    animation: resultPlay 5s infinite linear;
+}
+
+.is-play7.result-txt {
+    animation: resultPlay 7s infinite linear;
+}
+
 
 @keyframes resultPlay {
     100% {
