@@ -66,7 +66,7 @@ class app{
     init() {
       var body=document.body;
       body.addEventListener("touchstart",(e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         this.currentState.onClick();
       });
       body.addEventListener("click", (e)=>{
