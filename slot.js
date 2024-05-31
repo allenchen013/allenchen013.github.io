@@ -20,7 +20,7 @@ async function startAnimation() {
 async function stopAnimation() {
   const dd = document.getElementById("dd");
   const cc = document.getElementById("cc");
-  
+
   cc.play();
   dd.load();  
   dd.pause();

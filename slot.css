@@ -13,8 +13,8 @@ html, body{
     align-items: center; 
 }
 .result {
-    height: 70px;
-    width: 300px; 
+    height: 100px;
+    width: 350px; 
     border-radius: 4px;
     border: 2px solid gray;
     overflow: hidden;    
@@ -32,10 +32,12 @@ html, body{
 }
 
 .result-item {
-    font-size: 48px;
+    font-family: "微軟正黑體";
+    font-size: 70px;
+    font-weight: bold;
     display: flex;
     justify-content: center;
-    line-height: 70px;
+    line-height: 100px;
 }
 .btn-start, .btn-stop {
     width: 200;
