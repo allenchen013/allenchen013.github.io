@@ -1,4 +1,5 @@
 async function startAnimation() {
+    startAudio();
     if (document.getElementById(`result_A`)) {
       const el=document.getElementById(`result_A`);
       el.style.transform = 'translateY(0%)';    
@@ -17,6 +18,13 @@ async function startAnimation() {
 }
 
 async function stopAnimation() {
+  const dd = document.getElementById("dd");
+  const cc = document.getElementById("cc");
+  
+  cc.play();
+  dd.load();  
+  dd.pause();
+  
 
 if (document.getElementById(`result_A`)) {
     const ela=document.getElementById(`result_A`);
@@ -30,7 +38,7 @@ if (document.getElementById(`result_A`)) {
     await delay(1000); 
     ela.classList.toggle("is-play");
     ela.classList.add('is-play3');
-    await delay(2000);
+    await delay(1000);
     ela.classList.remove('is-play3');
     await delay(100);
     ela.style.transform = `translateY(-50%)`;
@@ -43,7 +51,7 @@ if (document.getElementById(`result_A`)) {
 
     elb.classList.toggle('is-play');
     elb.classList.add('is-play3');
-    await delay(2000);
+    await delay(1000);
     elb.classList.remove('is-play3');
     await delay(100);    
     elb.style.transform = `translateY(-50%)`;
@@ -56,7 +64,7 @@ if (document.getElementById(`result_A`)) {
 
     elc.classList.toggle('is-play');
     elc.classList.add('is-play3');
-    await delay(2000);
+    await delay(1000);
     elc.classList.remove('is-play3');
     await delay(100);    
     elc.style.transform = `translateY(-50%)`;
@@ -74,9 +82,13 @@ if (document.getElementById(`result_A`)) {
 class app{
     state0 = new State0(this)
     state1 = new State1(this)
-    currentState = this.state0
+    currentState = this.state1
 
     init() {
+      const audio = document.getElementById("dd");
+            
+      audio.play();
+      audio.muted=false;
       var body=document.body;
       body.addEventListener("touchstart",(e)=>{
         e.preventDefault();
@@ -133,4 +145,9 @@ function delay(n) {
   return new Promise(function(resolve) {
     setTimeout(resolve, n * 1);
   });
+}
+
+function startAudio() {
+  const audio = document.getElementById("dd");
+  audio.play();    
 }
