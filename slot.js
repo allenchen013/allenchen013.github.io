@@ -90,10 +90,10 @@ class app{
       audio.play();
       audio.muted=false;
       var body=document.body;
-      body.addEventListener("touchstart",(e)=>{
-        e.preventDefault();
-        this.currentState.onClick();
-      });
+      // body.addEventListener("touchstart",(e)=>{
+      //   e.preventDefault();
+      //   this.currentState.onClick();
+      // });
       body.addEventListener("click", (e)=>{
         e.preventDefault();
         this.currentState.onClick();
