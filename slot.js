@@ -1,4 +1,11 @@
 async function startAnimation() {
+  const dd = document.getElementById("dd");
+  const cc = document.getElementById("cc");
+
+  dd.play();
+  cc.load();  
+  cc.pause();
+
     startAudio();
     if (document.getElementById(`result_A`)) {
       const el=document.getElementById(`result_A`);
