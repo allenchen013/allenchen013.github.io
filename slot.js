@@ -39,7 +39,7 @@ if (document.getElementById(`result_A`)) {
     const elc=document.getElementById(`result_C`);
 
     const num1 = Math.floor(Math.random() * 10);
-    const num2 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 11);
     const num3 = Math.floor(Math.random() * 8);
 
     await delay(1000); 
