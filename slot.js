@@ -67,7 +67,7 @@ if (document.getElementById(`result_A`)) {
     await delay(10);
     elb.style.transform = `translateY(0%)`;
     await delay(10);
-    elb.style.transform = `translateY(${-num2/10 * 100}%)`;
+    elb.style.transform = `translateY(${-num2/11 * 100}%)`;
 
     elc.classList.toggle('is-play');
     elc.classList.add('is-play3');
